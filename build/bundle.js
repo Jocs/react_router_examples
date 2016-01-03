@@ -46,8 +46,6 @@
 
 	'use strict';
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -56,209 +54,24 @@
 
 	var _reactRouter = __webpack_require__(159);
 
+	var _components = __webpack_require__(208);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var About = (function (_Component) {
-		_inherits(About, _Component);
-
-		function About(props) {
-			_classCallCheck(this, About);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(About).call(this, props));
-		}
-
-		_createClass(About, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'h2',
-					null,
-					' This is about page!'
-				);
-			}
-		}]);
-
-		return About;
-	})(_react.Component);
-
-	var Inbox = (function (_Component2) {
-		_inherits(Inbox, _Component2);
-
-		function Inbox(props) {
-			_classCallCheck(this, Inbox);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Inbox).call(this, props));
-		}
-
-		_createClass(Inbox, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'h2',
-						null,
-						' This is Inbox page!'
-					),
-					this.props.children || 'This is no message'
-				);
-			}
-		}]);
-
-		return Inbox;
-	})(_react.Component);
-
-	var MessageList = (function (_Component3) {
-		_inherits(MessageList, _Component3);
-
-		function MessageList() {
-			_classCallCheck(this, MessageList);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(MessageList).apply(this, arguments));
-		}
-
-		_createClass(MessageList, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						_reactRouter.Link,
-						{ to: 'messages/1' },
-						'Go to 1'
-					),
-					_react2.default.createElement(
-						_reactRouter.Link,
-						{ to: 'inbox/messages/2' },
-						' Go to 2'
-					)
-				);
-			}
-		}]);
-
-		return MessageList;
-	})(_react.Component);
-
-	var Message = (function (_Component4) {
-		_inherits(Message, _Component4);
-
-		function Message() {
-			_classCallCheck(this, Message);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Message).apply(this, arguments));
-		}
-
-		_createClass(Message, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					'This is Message!',
-					this.props.params.id
-				);
-			}
-		}]);
-
-		return Message;
-	})(_react.Component);
-
-	var Home = (function (_Component5) {
-		_inherits(Home, _Component5);
-
-		function Home(props) {
-			_classCallCheck(this, Home);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Home).call(this, props));
-		}
-
-		_createClass(Home, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'h2',
-					null,
-					' This is Home page!'
-				);
-			}
-		}]);
-
-		return Home;
-	})(_react.Component);
-
-	var App = (function (_Component6) {
-		_inherits(App, _Component6);
-
-		function App() {
-			_classCallCheck(this, App);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
-		}
-
-		_createClass(App, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'h1',
-						null,
-						'App Route without react-router'
-					),
-					_react2.default.createElement(
-						'ul',
-						null,
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ to: 'about' },
-								'About'
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ to: 'inbox' },
-								'Inbox'
-							)
-						)
-					),
-					this.props.children
-				);
-			}
-		}]);
-
-		return App;
-	})(_react.Component);
 
 	(0, _reactDom.render)(_react2.default.createElement(
 		_reactRouter.Router,
 		{ history: _reactRouter.browserHistory },
 		_react2.default.createElement(
 			_reactRouter.Route,
-			{ path: '/', component: App },
-			_react2.default.createElement(_reactRouter.IndexRoute, { component: Home }),
-			_react2.default.createElement(_reactRouter.Route, { path: 'about', component: About }),
+			{ path: '/', component: _components.App },
+			_react2.default.createElement(_reactRouter.IndexRoute, { component: _components.IndexApp }),
 			_react2.default.createElement(
 				_reactRouter.Route,
-				{ path: 'inbox', component: Inbox },
-				_react2.default.createElement(_reactRouter.IndexRoute, { component: MessageList }),
-				_react2.default.createElement(_reactRouter.Route, { path: '/messages/:id', component: Message }),
-				_react2.default.createElement(_reactRouter.Redirect, { from: 'messages/:id', to: '/messages/:id' })
-			)
+				{ path: '/users', component: _components.Users },
+				_react2.default.createElement(_reactRouter.IndexRoute, { component: _components.UsersIndex }),
+				_react2.default.createElement(_reactRouter.Route, { path: '/users/:id', component: _components.User })
+			),
+			_react2.default.createElement(_reactRouter.Route, { path: '/about', component: _components.About })
 		)
 	), document.querySelector('#container'));
 
@@ -24612,6 +24425,225 @@
 
 	exports['default'] = useBasename;
 	module.exports = exports['default'];
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.Users = exports.User = exports.About = exports.UsersIndex = exports.IndexApp = exports.App = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(159);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ACTIVE = { color: 'red' };
+
+	var App = (function (_Component) {
+		_inherits(App, _Component);
+
+		function App() {
+			_classCallCheck(this, App);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+		}
+
+		_createClass(App, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'ul',
+						null,
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								_reactRouter.IndexLink,
+								{ to: '/users', activeStyle: ACTIVE },
+								'Users'
+							)
+						),
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								_reactRouter.Link,
+								{ to: '/about', activeStyle: ACTIVE },
+								'About'
+							)
+						)
+					),
+					this.props.children
+				);
+			}
+		}]);
+
+		return App;
+	})(_react.Component);
+
+	var IndexApp = (function (_Component2) {
+		_inherits(IndexApp, _Component2);
+
+		function IndexApp() {
+			_classCallCheck(this, IndexApp);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(IndexApp).apply(this, arguments));
+		}
+
+		_createClass(IndexApp, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'h2',
+					null,
+					'This is indexApp page!'
+				);
+			}
+		}]);
+
+		return IndexApp;
+	})(_react.Component);
+
+	var Users = (function (_Component3) {
+		_inherits(Users, _Component3);
+
+		function Users() {
+			_classCallCheck(this, Users);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Users).apply(this, arguments));
+		}
+
+		_createClass(Users, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'ul',
+						null,
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								_reactRouter.Link,
+								{ to: '/users/yan', activeStyle: ACTIVE },
+								'yan'
+							)
+						),
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								_reactRouter.Link,
+								{ to: '/users/ransixi', query: { foo: 'bar' }, activeStyle: ACTIVE },
+								'ransixi'
+							)
+						)
+					),
+					this.props.children
+				);
+			}
+		}]);
+
+		return Users;
+	})(_react.Component);
+
+	var UsersIndex = (function (_Component4) {
+		_inherits(UsersIndex, _Component4);
+
+		function UsersIndex() {
+			_classCallCheck(this, UsersIndex);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(UsersIndex).apply(this, arguments));
+		}
+
+		_createClass(UsersIndex, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					'This is index page of users!'
+				);
+			}
+		}]);
+
+		return UsersIndex;
+	})(_react.Component);
+
+	var User = (function (_Component5) {
+		_inherits(User, _Component5);
+
+		function User() {
+			_classCallCheck(this, User);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(User).apply(this, arguments));
+		}
+
+		_createClass(User, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					'hello ',
+					this.props.params.id
+				);
+			}
+		}]);
+
+		return User;
+	})(_react.Component);
+
+	var About = (function (_Component6) {
+		_inherits(About, _Component6);
+
+		function About() {
+			_classCallCheck(this, About);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(About).apply(this, arguments));
+		}
+
+		_createClass(About, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					'This is About Page!'
+				);
+			}
+		}]);
+
+		return About;
+	})(_react.Component);
+
+	exports.App = App;
+	exports.IndexApp = IndexApp;
+	exports.UsersIndex = UsersIndex;
+	exports.About = About;
+	exports.User = User;
+	exports.Users = Users;
 
 /***/ }
 /******/ ]);
